@@ -21,6 +21,7 @@
 		61C6E5EF2533767700AB9DB6 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 61C6E5EE2533767700AB9DB6 /* Moya */; };
 		61C6E5F4253376AD00AB9DB6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E5F3253376AD00AB9DB6 /* API.swift */; };
 		61C6E5F925337FF700AB9DB6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E5F825337FF700AB9DB6 /* WebViewController.swift */; };
+		61C6E60225338CA400AB9DB6 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E60125338CA400AB9DB6 /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		61C6E5E72533724200AB9DB6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		61C6E5F3253376AD00AB9DB6 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		61C6E5F825337FF700AB9DB6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		61C6E60125338CA400AB9DB6 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		61C6E59025329B8F00AB9DB6 /* PostFeedClient-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				61C6E60025338C9500AB9DB6 /* Database */,
 				61C6E5EC2533756C00AB9DB6 /* API */,
 				61C6E5C925329C1A00AB9DB6 /* App */,
 				61C6E5C725329C0A00AB9DB6 /* Models */,
@@ -199,6 +202,14 @@
 				61C6E5F3253376AD00AB9DB6 /* API.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		61C6E60025338C9500AB9DB6 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				61C6E60125338CA400AB9DB6 /* DatabaseManager.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +356,7 @@
 				61C6E5D125329DDB00AB9DB6 /* PostsTableViewController.swift in Sources */,
 				61C6E5F4253376AD00AB9DB6 /* API.swift in Sources */,
 				61C6E5F925337FF700AB9DB6 /* WebViewController.swift in Sources */,
+				61C6E60225338CA400AB9DB6 /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

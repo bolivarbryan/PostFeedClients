@@ -27,11 +27,14 @@ class PostsListViewModel {
     }
 }
 
+/// Struct used for decoding API response in PostsListViewModel.fetch function
 struct APIResponse: Codable {
     let hits: [Post]
 }
 
 extension DateFormatter {
+    
+    /// Adds support for iso8601Full date format
     static let iso8601Full: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
