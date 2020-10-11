@@ -1,11 +1,12 @@
 import Foundation
-import CoreData
 import Moya
 
 class PostsListViewModel {
     var posts: [Post] = []
     
     func fetch(completion: @escaping () -> Void) {
+        let dbManager = DatabaseManager.shared
+        posts = dbManager.getPosts()
         let provider = MoyaProvider<API>()
         provider.request(.request(query: "ios")) { result in
             switch result {
@@ -15,7 +16,11 @@ class PostsListViewModel {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
                     let serializedResponse = try decoder.decode(APIResponse.self, from: data)
-                    self.posts = serializedResponse.hits
+                    let postsResponse = serializedResponse.hits
+                    postsResponse.forEach { (post) in
+                        post.save()
+                    }
+                    self.posts = dbManager.getPosts()
                     completion()
                 } catch {
                     print(error)
@@ -25,6 +30,10 @@ class PostsListViewModel {
             }
         }
     }
+    
+    func deletePost(index: Int) {
+        DatabaseManager.shared.delete(post: posts[index])
+    }
 }
 
 /// Struct used for decoding API response in PostsListViewModel.fetch function
@@ -33,7 +42,6 @@ struct APIResponse: Codable {
 }
 
 extension DateFormatter {
-    
     /// Adds support for iso8601Full date format
     static let iso8601Full: DateFormatter = {
         let formatter = DateFormatter()

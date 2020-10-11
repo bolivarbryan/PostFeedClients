@@ -48,9 +48,12 @@ class PostsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            //delete from DB
+            let post = viewModel.posts[indexPath.row]
+            DatabaseManager.shared.delete(post: post)
             
+            //Delete in UI
             viewModel.posts.remove(at: indexPath.row)
-            
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }

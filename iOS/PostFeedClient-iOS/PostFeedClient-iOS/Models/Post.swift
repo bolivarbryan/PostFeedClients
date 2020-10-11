@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+import CoreData
 // MARK: - Post
 struct Post: Codable {
     /// Created timestamp from post
@@ -23,7 +23,7 @@ struct Post: Codable {
     private let storyURL: String?
     
     /// Post identifier
-    private let objectID: String?
+    let objectID: String?
     
     /// coding keys for decoding from api Response
     enum CodingKeys: String, CodingKey {
@@ -32,6 +32,14 @@ struct Post: Codable {
         case storyTitle = "story_title"
         case storyURL = "story_url"
         case objectID
+    }
+    
+    init(createdAt: Date, author: String?, storyTitle: String?, storyURL: String?, objectID: String?) {
+        self.createdAt = createdAt
+        self.author = author
+        self.storyTitle = storyTitle
+        self.storyURL = storyURL
+        self.objectID = objectID
     }
 }
 
@@ -71,5 +79,31 @@ extension Post {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .abbreviated
         return formatter.localizedString(for: createdAt, relativeTo: Date())
+    }
+}
+
+/// Database
+extension Post {
+    func save() {
+        guard
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "PostEntity", in: managedContext)!
+        let post = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        post.setValue(createdAt, forKeyPath: "createdAt")
+        post.setValue(storyTitle, forKeyPath: "storyTitle")
+        post.setValue(author, forKeyPath: "author")
+        post.setValue(storyURL, forKeyPath: "storyURL")
+        post.setValue(objectID, forKeyPath: "id")
+        post.setValue(false, forKeyPath: "deletedObject")
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
     }
 }
