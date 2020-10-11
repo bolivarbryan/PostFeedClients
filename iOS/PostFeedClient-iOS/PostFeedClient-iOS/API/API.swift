@@ -38,7 +38,7 @@ extension API: TargetType {
     }
 
     var headers: [String: String]? {
-        return ["Cookie" : "__cfduid=d43aada735e2d00bd520559a4a58f51071602436013"]
+        return [:]
     }
 
     public var sampleData: Data {

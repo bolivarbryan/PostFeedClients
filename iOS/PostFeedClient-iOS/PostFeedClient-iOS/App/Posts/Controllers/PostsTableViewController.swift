@@ -9,12 +9,16 @@ import UIKit
 
 class PostsTableViewController: UITableViewController {
     
+    /// Posts List ViewModel which handles Datasource and connects to networking and database layers
     let viewModel = PostsListViewModel()
+    
+    /// Selected post for display on a webview
+    var selectedPost: Post?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Posts Feed"
-        self.clearsSelectionOnViewWillAppear = false
+        self.clearsSelectionOnViewWillAppear = true
         viewModel.fetch() {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -39,7 +43,7 @@ class PostsTableViewController: UITableViewController {
         cell.textLabel?.text = post.cellTitle
         cell.detailTextLabel?.text = post.cellDescription
         
-        cell.accessoryType = post.storyURL != nil ? .disclosureIndicator : .none
+        cell.accessoryType = post.url != nil ? .disclosureIndicator : .none
         return cell
     }
     
@@ -52,17 +56,17 @@ class PostsTableViewController: UITableViewController {
      }
      */
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            viewModel.posts.remove(at: indexPath.row)
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     
     /*
      // Override to support rearranging the table view.
@@ -79,14 +83,24 @@ class PostsTableViewController: UITableViewController {
      }
      */
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPost = viewModel.posts[indexPath.row]
+        if selectedPost?.url != nil {
+            performSegue(withIdentifier: "webSegue", sender: self)
+        } else {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "webSegue" {
+            let vc = segue.destination as! WebViewController
+            vc.post = selectedPost
+        }
+    }
+    
     
 }

@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,10 +48,48 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="hXI-xi-Byb"/>
+                    <connections>
+                        <segue destination="KpL-zv-fKB" kind="show" identifier="webSegue" id="bpC-T7-zi3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFp-eI-1s1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1234.7826086956522" y="154.6875"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="jpk-ac-YQT">
+            <objects>
+                <viewController id="KpL-zv-fKB" customClass="WebViewController" customModule="PostFeedClient_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1qJ-th-pxa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K05-Bp-VYb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NQH-XR-DYb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NQH-XR-DYb" firstAttribute="bottom" secondItem="K05-Bp-VYb" secondAttribute="bottom" constant="-34" id="1Fe-c6-GlZ"/>
+                            <constraint firstItem="K05-Bp-VYb" firstAttribute="top" secondItem="NQH-XR-DYb" secondAttribute="top" id="OLX-fl-1Tx"/>
+                            <constraint firstItem="K05-Bp-VYb" firstAttribute="leading" secondItem="NQH-XR-DYb" secondAttribute="leading" id="lt8-Qf-I6B"/>
+                            <constraint firstItem="NQH-XR-DYb" firstAttribute="trailing" secondItem="K05-Bp-VYb" secondAttribute="trailing" id="wVB-bl-7fS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9qe-cb-2Fq"/>
+                    <connections>
+                        <outlet property="webView" destination="K05-Bp-VYb" id="meu-np-Gc6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H60-xc-eeT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2076.8115942028985" y="154.6875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dMt-go-t83">

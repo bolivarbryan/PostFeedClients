@@ -20,6 +20,7 @@
 		61C6E5E82533724200AB9DB6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E5E72533724200AB9DB6 /* Post.swift */; };
 		61C6E5EF2533767700AB9DB6 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 61C6E5EE2533767700AB9DB6 /* Moya */; };
 		61C6E5F4253376AD00AB9DB6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E5F3253376AD00AB9DB6 /* API.swift */; };
+		61C6E5F925337FF700AB9DB6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E5F825337FF700AB9DB6 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		61C6E5D925329E2400AB9DB6 /* PostsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewModel.swift; sourceTree = "<group>"; };
 		61C6E5E72533724200AB9DB6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		61C6E5F3253376AD00AB9DB6 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		61C6E5F825337FF700AB9DB6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +113,6 @@
 			children = (
 				61C6E5EC2533756C00AB9DB6 /* API */,
 				61C6E5C925329C1A00AB9DB6 /* App */,
-				61C6E5C825329C1400AB9DB6 /* Extensions */,
 				61C6E5C725329C0A00AB9DB6 /* Models */,
 				61C6E59125329B8F00AB9DB6 /* AppDelegate.swift */,
 				61C6E59325329B8F00AB9DB6 /* SceneDelegate.swift */,
@@ -149,13 +150,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		61C6E5C825329C1400AB9DB6 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		61C6E5C925329C1A00AB9DB6 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				61C6E5D025329DDB00AB9DB6 /* PostsTableViewController.swift */,
+				61C6E5F825337FF700AB9DB6 /* WebViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -349,6 +344,7 @@
 				61C6E59425329B8F00AB9DB6 /* SceneDelegate.swift in Sources */,
 				61C6E5D125329DDB00AB9DB6 /* PostsTableViewController.swift in Sources */,
 				61C6E5F4253376AD00AB9DB6 /* API.swift in Sources */,
+				61C6E5F925337FF700AB9DB6 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
