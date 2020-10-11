@@ -3,19 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		61C6E59225329B8F00AB9DB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E59125329B8F00AB9DB6 /* AppDelegate.swift */; };
 		61C6E59425329B8F00AB9DB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E59325329B8F00AB9DB6 /* SceneDelegate.swift */; };
-		61C6E59625329B8F00AB9DB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E59525329B8F00AB9DB6 /* ViewController.swift */; };
 		61C6E59925329B8F00AB9DB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C6E59725329B8F00AB9DB6 /* Main.storyboard */; };
 		61C6E59C25329B8F00AB9DB6 /* PostFeedClient_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E59A25329B8F00AB9DB6 /* PostFeedClient_iOS.xcdatamodeld */; };
 		61C6E59E25329B9000AB9DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61C6E59D25329B9000AB9DB6 /* Assets.xcassets */; };
 		61C6E5A125329B9000AB9DB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C6E59F25329B9000AB9DB6 /* LaunchScreen.storyboard */; };
 		61C6E5AC25329B9000AB9DB6 /* PostFeedClient_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E5AB25329B9000AB9DB6 /* PostFeedClient_iOSTests.swift */; };
 		61C6E5B725329B9000AB9DB6 /* PostFeedClient_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E5B625329B9000AB9DB6 /* PostFeedClient_iOSUITests.swift */; };
+		61C6E5D125329DDB00AB9DB6 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E5D025329DDB00AB9DB6 /* PostsTableViewController.swift */; };
+		61C6E5DA25329E2400AB9DB6 /* PostsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E5D925329E2400AB9DB6 /* PostsListViewModel.swift */; };
+		61C6E5E82533724200AB9DB6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E5E72533724200AB9DB6 /* Post.swift */; };
+		61C6E5EF2533767700AB9DB6 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 61C6E5EE2533767700AB9DB6 /* Moya */; };
+		61C6E5F4253376AD00AB9DB6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6E5F3253376AD00AB9DB6 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +43,6 @@
 		61C6E58E25329B8F00AB9DB6 /* PostFeedClient-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PostFeedClient-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C6E59125329B8F00AB9DB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61C6E59325329B8F00AB9DB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		61C6E59525329B8F00AB9DB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		61C6E59825329B8F00AB9DB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		61C6E59B25329B8F00AB9DB6 /* PostFeedClient_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PostFeedClient_iOS.xcdatamodel; sourceTree = "<group>"; };
 		61C6E59D25329B9000AB9DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +54,10 @@
 		61C6E5B225329B9000AB9DB6 /* PostFeedClient-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PostFeedClient-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C6E5B625329B9000AB9DB6 /* PostFeedClient_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFeedClient_iOSUITests.swift; sourceTree = "<group>"; };
 		61C6E5B825329B9000AB9DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61C6E5D025329DDB00AB9DB6 /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
+		61C6E5D925329E2400AB9DB6 /* PostsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewModel.swift; sourceTree = "<group>"; };
+		61C6E5E72533724200AB9DB6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		61C6E5F3253376AD00AB9DB6 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61C6E5EF2533767700AB9DB6 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,10 +109,12 @@
 		61C6E59025329B8F00AB9DB6 /* PostFeedClient-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				61C6E5EC2533756C00AB9DB6 /* API */,
+				61C6E5C925329C1A00AB9DB6 /* App */,
+				61C6E5C825329C1400AB9DB6 /* Extensions */,
+				61C6E5C725329C0A00AB9DB6 /* Models */,
 				61C6E59125329B8F00AB9DB6 /* AppDelegate.swift */,
 				61C6E59325329B8F00AB9DB6 /* SceneDelegate.swift */,
-				61C6E59525329B8F00AB9DB6 /* ViewController.swift */,
-				61C6E59725329B8F00AB9DB6 /* Main.storyboard */,
 				61C6E59D25329B9000AB9DB6 /* Assets.xcassets */,
 				61C6E59F25329B9000AB9DB6 /* LaunchScreen.storyboard */,
 				61C6E5A225329B9000AB9DB6 /* Info.plist */,
@@ -131,6 +141,71 @@
 			path = "PostFeedClient-iOSUITests";
 			sourceTree = "<group>";
 		};
+		61C6E5C725329C0A00AB9DB6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				61C6E5E72533724200AB9DB6 /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		61C6E5C825329C1400AB9DB6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		61C6E5C925329C1A00AB9DB6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				61C6E5CA25329C2000AB9DB6 /* Posts */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		61C6E5CA25329C2000AB9DB6 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				61C6E5D825329E1700AB9DB6 /* ViewModels */,
+				61C6E5CC25329C3600AB9DB6 /* Controllers */,
+				61C6E5CB25329C3000AB9DB6 /* Views */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		61C6E5CB25329C3000AB9DB6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				61C6E59725329B8F00AB9DB6 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		61C6E5CC25329C3600AB9DB6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				61C6E5D025329DDB00AB9DB6 /* PostsTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		61C6E5D825329E1700AB9DB6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				61C6E5D925329E2400AB9DB6 /* PostsListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		61C6E5EC2533756C00AB9DB6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				61C6E5F3253376AD00AB9DB6 /* API.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +222,9 @@
 			dependencies = (
 			);
 			name = "PostFeedClient-iOS";
+			packageProductDependencies = (
+				61C6E5EE2533767700AB9DB6 /* Moya */,
+			);
 			productName = "PostFeedClient-iOS";
 			productReference = 61C6E58E25329B8F00AB9DB6 /* PostFeedClient-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +296,9 @@
 				Base,
 			);
 			mainGroup = 61C6E58525329B8F00AB9DB6;
+			packageReferences = (
+				61C6E5ED2533767700AB9DB6 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 61C6E58F25329B8F00AB9DB6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,10 +342,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61C6E59625329B8F00AB9DB6 /* ViewController.swift in Sources */,
+				61C6E5DA25329E2400AB9DB6 /* PostsListViewModel.swift in Sources */,
 				61C6E59225329B8F00AB9DB6 /* AppDelegate.swift in Sources */,
 				61C6E59C25329B8F00AB9DB6 /* PostFeedClient_iOS.xcdatamodeld in Sources */,
+				61C6E5E82533724200AB9DB6 /* Post.swift in Sources */,
 				61C6E59425329B8F00AB9DB6 /* SceneDelegate.swift in Sources */,
+				61C6E5D125329DDB00AB9DB6 /* PostsTableViewController.swift in Sources */,
+				61C6E5F4253376AD00AB9DB6 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +681,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		61C6E5ED2533767700AB9DB6 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		61C6E5EE2533767700AB9DB6 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61C6E5ED2533767700AB9DB6 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		61C6E59A25329B8F00AB9DB6 /* PostFeedClient_iOS.xcdatamodeld */ = {
