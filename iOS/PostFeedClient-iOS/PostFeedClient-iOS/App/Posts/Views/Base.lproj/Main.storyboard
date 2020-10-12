@@ -48,6 +48,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="hXI-xi-Byb"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="9f6-yP-AIU">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshControlValueChanged:" destination="d2k-Y7-we6" eventType="valueChanged" id="khs-fS-iRJ"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <segue destination="KpL-zv-fKB" kind="show" identifier="webSegue" id="bpC-T7-zi3"/>
                     </connections>

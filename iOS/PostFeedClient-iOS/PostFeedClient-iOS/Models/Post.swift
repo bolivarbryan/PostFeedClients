@@ -25,7 +25,7 @@ struct Post: Codable {
     /// Post identifier
     let objectID: String?
     
-    /// coding keys for decoding from api Response
+    /// Coding keys for decoding from api Response
     enum CodingKeys: String, CodingKey {
         case createdAt = "created_at"
         case author
@@ -65,7 +65,7 @@ extension Post {
         return storyTitle ?? "No Title"
     }
     
-    ///Validated url from post, used for opening in a web browser
+    /// Validated url from post, used for opening in a web browser
     var url: URL? {
         guard
             let urlString = storyURL,
@@ -75,6 +75,7 @@ extension Post {
         return url
     }
     
+    /// Calculates how much time passed until current date
     var timeAgo: String? {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .abbreviated
@@ -84,6 +85,8 @@ extension Post {
 
 /// Database
 extension Post {
+    
+    /// Stores Post in local database
     func save() {
         guard
             let appDelegate = UIApplication.shared.delegate as? AppDelegate

@@ -4,6 +4,7 @@ import Moya
 class PostsListViewModel {
     var posts: [Post] = []
     
+    /// Fetches Posts from API for loading, but first returns what is currently stored in database
     func fetch(completion: @escaping () -> Void) {
         let dbManager = DatabaseManager.shared
         posts = dbManager.getPosts()
