@@ -62,5 +62,8 @@ XCode version used: **Xcode 12.0.1**
 -
 Architecture Used: *Composable* ([https://github.com/pointfreeco/swift-composable-architecture](https://github.com/pointfreeco/swift-composable-architecture))
 
+
 ### Android:
 -
+Update on the way.
+
