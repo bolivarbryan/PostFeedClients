@@ -29,7 +29,7 @@ Need to take a look of what's is happening out there with technology. this is yo
 About API
 -
 
-By testing multiple times API, I found that there are two scenarios where data comes duplicated or nil. I resolved to use story_title as primary_key in my database instead of objectID because information could give reviewers an impression of error in database. (please find evidence below)
+By testing multiple times API, I found that there are two scenarios where data comes duplicated or nil. I resolved to use objectID as primary key in database (data still comes duplicated anyway), a solution could be to threat story_title as primary key but this is not reccomended. (please find evidence below).
 
 ![GitHub Logo](Duplicates_Evidence.jpg)
 
