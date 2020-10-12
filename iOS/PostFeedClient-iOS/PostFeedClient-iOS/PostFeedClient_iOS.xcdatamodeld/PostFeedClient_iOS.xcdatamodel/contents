@@ -10,6 +10,7 @@
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="id"/>
+                <constraint value="storyTitle"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>

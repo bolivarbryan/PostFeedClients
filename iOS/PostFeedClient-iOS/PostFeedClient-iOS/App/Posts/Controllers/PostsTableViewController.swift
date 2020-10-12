@@ -25,6 +25,7 @@ class PostsTableViewController: UITableViewController {
             }
         }
     }
+    
     @IBAction func refreshControlValueChanged(_ sender: UIRefreshControl) {
         viewModel.fetch {
             sender.endRefreshing()
