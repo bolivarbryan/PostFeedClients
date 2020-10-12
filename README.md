@@ -26,14 +26,15 @@ Need to take a look of what's is happening out there with technology. this is yo
 	
 ```
 
-##About API
+About API
+-
 
 By testing multiple times API, I found that there are two scenarios where data comes duplicated or nil. I resolved to use story_title as primary_key in my database instead of objectID because information could give reviewers an impression of error in database. (please find evidence below)
 
 ![GitHub Logo](Duplicates_Evidence.jpg)
 
 
-###iOS: 
+iOS: 
 -
 
 Architecture used: *MVVM* ([https://www.objc.io/issues/13-architecture/mvvm/](https://www.objc.io/issues/13-architecture/mvvm/))
@@ -65,11 +66,11 @@ Dependency Manager used: **Swift Package Manager**
 
 XCode version used: **Xcode 12.0.1**
 
-###iOS - SwiftUI:
+iOS - SwiftUI:
 -
 Architecture Used: *Composable* ([https://github.com/pointfreeco/swift-composable-architecture](https://github.com/pointfreeco/swift-composable-architecture))
 
 
-### Android:
+Android:
 -
 Update on the way.
