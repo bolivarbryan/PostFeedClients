@@ -38,5 +38,5 @@ Repository Navigation
 -
 Each Project contains its own documentation and also description for internal use. So please take a look of each readme, since they behave slightly different.
 
-- iOS: ([Readme](https://github.com/bolivarbryan/PostFeedClients/blob/main/iOS/README.md))
-- iOS - SwiftUI: ([Readme](https://github.com/bolivarbryan/PostFeedClients/blob/main/iOS/README.md))
+- iOS: ([Readme](https://github.com/bolivarbryan/PostFeedClients/tree/main/iOS))
+- iOS - SwiftUI: ([Readme](https://github.com/bolivarbryan/PostFeedClients/tree/main/iOS-SwiftUI))
