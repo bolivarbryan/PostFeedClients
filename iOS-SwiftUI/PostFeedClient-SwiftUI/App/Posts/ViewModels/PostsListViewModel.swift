@@ -6,8 +6,6 @@ class PostsListViewModel {
     
     /// Fetches Posts from API for loading, but first returns what is currently stored in database
     func fetch(completion: @escaping () -> Void) {
-        let dbManager = DatabaseManager.shared
-        posts = dbManager.getPosts()
         let provider = MoyaProvider<API>()
         provider.request(.request(query: "ios")) { result in
             switch result {
@@ -19,7 +17,6 @@ class PostsListViewModel {
                     let serializedResponse = try decoder.decode(APIResponse.self, from: data)
                     let postsResponse = serializedResponse.hits
                     postsResponse.forEach { (post) in
-//                        post.save()
                     }
                     self.posts = postsResponse
                     completion()
@@ -31,10 +28,7 @@ class PostsListViewModel {
             }
         }
     }
-    
-    func deletePost(index: Int) {
-        DatabaseManager.shared.delete(post: posts[index])
-    }
+
 }
 
 /// Struct used for decoding API response in PostsListViewModel.fetch function

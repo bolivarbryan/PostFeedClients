@@ -67,8 +67,11 @@ Dependency Manager used: **Swift Package Manager**
 XCode version used: **Xcode 12.0.1**
 
 iOS - SwiftUI:
--
-Architecture Used: *Composable* ([https://github.com/pointfreeco/swift-composable-architecture](https://github.com/pointfreeco/swift-composable-architecture))
+
+- **API**: Moya's Syntactic sugar for establishing API connection
+- **App**: Contains the complete app flow splitted by feature
+	- **Posts**: Post list Feature.
+		- **Views**: Contains SwiftUI and UIView Components
 
 
 Android:

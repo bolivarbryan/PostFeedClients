@@ -13,7 +13,7 @@ struct PostFeedClient_SwiftUIApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PostsView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
