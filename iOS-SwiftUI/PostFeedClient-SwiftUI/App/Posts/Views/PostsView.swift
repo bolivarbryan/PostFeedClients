@@ -38,13 +38,15 @@ struct PostsView: View {
         NavigationView {
             List {
                 ForEach(posts)  { post in
-                    VStack(alignment: .leading) {
+                    NavigationLink(destination: BrowserView(post: post.postRepresentation)) {
+                        VStack(alignment: .leading) {
                         Text(post.postRepresentation.cellTitle)
                             .font(.headline)
                             .padding(.bottom, 2)
                         Text(post.postRepresentation.cellDescription)
                             .font(.subheadline)
                             .foregroundColor(.gray)
+                    }
                     }
                 }
                 .onDelete(perform: deleteItems)

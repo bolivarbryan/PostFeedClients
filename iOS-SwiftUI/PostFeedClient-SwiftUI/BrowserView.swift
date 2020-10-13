@@ -13,7 +13,7 @@ struct BrowserView: View {
     var post: Post
     
     var body: some View {
-        WebView(urlString: post.url)
+        WebView(urlString: post.storyURL)
     }
 }
 
