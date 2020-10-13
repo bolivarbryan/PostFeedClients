@@ -34,46 +34,9 @@ By testing multiple times API, I found that there are two scenarios where data c
 ![GitHub Logo](Duplicates_Evidence.jpg)
 
 
-iOS: 
+Repository Navigation
 -
+Each Project contains its own documentation and also description for internal use. So please take a look of each readme, since they behave slightly different.
 
-Architecture used: *MVVM* ([https://www.objc.io/issues/13-architecture/mvvm/](https://www.objc.io/issues/13-architecture/mvvm/))
-
-Project Distribution:
-
-- **DatabaseManager**: Handles Database Connection and delete and fetch requests
-- **API**: Moya's Syntactic sugar for establishing API connection
-- **App**: Contains the complete app flow splitted by feature
-	- **Posts**: Post list Feature.
-		- **ViewModels**: Posts View Model where the API Meets database and prepares data for sharing with controller
-		- **Controllers**: Standard UITableviewController for fetching Posts
-		- **Views**: Contains Storyboards and UIView Components
-
-		
-Internal Dependencies Used:
-
-- **UIKit**: Framework for building iOS Applications.
-- **Foundation**: Apple standard framework for handling default operations in Swift Ecosystem
-- **CoreData**: Data persistance framework for storing Data. in this case Posts feed
-	- Data is Fetched and only updated in case a post is 'Deleted'
-
-External dependencies:
-- **Moya**: Dependency for organizing API requests sending them to a separate layer. It uses internally Alamofire.
-- **AlamoFire**: Networking Dependency used for making API requests
-
-
-Dependency Manager used: **Swift Package Manager**
-
-XCode version used: **Xcode 12.0.1**
-
-iOS - SwiftUI:
-
-- **API**: Moya's Syntactic sugar for establishing API connection
-- **App**: Contains the complete app flow splitted by feature
-	- **Posts**: Post list Feature.
-		- **Views**: Contains SwiftUI and UIView Components
-
-
-Android:
--
-Update on the way.
+- iOS: ([Readme](https://github.com/bolivarbryan/PostFeedClients/blob/main/iOS-SwiftUI/README.md))
+- iOS - SwiftUI: ([Readme](https://github.com/bolivarbryan/PostFeedClients/blob/main/iOS/README.md))
