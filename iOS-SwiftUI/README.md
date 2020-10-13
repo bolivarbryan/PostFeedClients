@@ -31,7 +31,7 @@ About API
 
 By testing multiple times API, I found that there are two scenarios where data comes duplicated or nil. I resolved to use objectID as primary key in database (data still comes duplicated anyway), a solution could be to threat story_title as primary key but this is not reccomended. (please find evidence below).
 
-![GitHub Logo](Duplicates_Evidence.jpg)
+![GitHub Logo](/../Duplicates_Evidence.jpg)
 
 XCode version used: **Xcode 12.0.1**
 
